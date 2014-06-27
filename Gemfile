@@ -15,7 +15,7 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
 end
 
-gem 'bcrypt-ruby', '3.1.2'
+gem 'bcrypt-ruby'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.2.0'

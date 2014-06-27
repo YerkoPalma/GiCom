@@ -162,7 +162,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   aws-s3
-  bcrypt-ruby (= 3.1.2)
+  bcrypt-ruby
   bootstrap-sass (~> 3.2.0)
   bson_ext
   coffee-rails (~> 4.0.0)

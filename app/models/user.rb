@@ -1,9 +1,14 @@
 class User
   include Mongoid::Document
+  include Mongoid::Paperclip
   include ActiveModel::SecurePassword
   field :name, type: String
   field :email, type: String
+  field :avatar, type: String
   field :password_digest, type: String
+  field :_id, type: String, default: ->{ name } # Convierte el id del documento en su nombre, para mejor manejo de las URLs
+  has_mongoid_attached_file :avatar
+  validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
   before_save { self.email = email.downcase }
   has_secure_password

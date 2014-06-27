@@ -1,5 +1,7 @@
 GiCom::Application.routes.draw do
-  get "users/new"
+  # get "users/new"
+  resources :users
+  
   get "pages/home"
   get "pages/help"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,6 +9,7 @@ GiCom::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
