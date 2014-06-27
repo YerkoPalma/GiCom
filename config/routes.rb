@@ -1,6 +1,7 @@
 GiCom::Application.routes.draw do
   # get "users/new"
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   
   get "pages/home"
   get "pages/help"
@@ -10,6 +11,8 @@ GiCom::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

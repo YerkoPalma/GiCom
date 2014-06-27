@@ -1,0 +1,21 @@
+ 
+  <%= form_for(:session, url: sessions_path) do |f| %>
+    <div class="form-group">
+      <%= f.label :email %>
+  		<%= f.text_field :email, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.label :password %>
+  		<%= f.password_field :password, :class => "form-control" %>
+    </div>					  
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Recordarme
+      </label>
+    </div>
+    <div class="form-group">
+      <%= link_to "Crear cuenta", signup_path %>
+  		<a href="#" style="float:right;">Recuperar contraseña</a>					    
+    </div>
+    <%= f.submit "Sign in", class: "btn btn-default" %>
+  <% end %>

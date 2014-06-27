@@ -36,10 +36,10 @@ div > .field_with_errors{
 	width: 50px;
 	margin-top: -10px;
 }
+
 .navbar-right{	
-	
 	padding: 5px;
-	img, li, a{
+	img, li:not(.dropdownItem), a:not(.dropdownLink){
 		display: inline-block !important;
 	}
 
