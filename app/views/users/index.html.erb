@@ -1,0 +1,27 @@
+<%= render "shared/header"%>
+
+<div class="container" style="margin-top: 6%;">
+	<div class="row">
+		<div class="col-md-4">	
+			<%= render "shared/user_sidemenu"%>					
+		</div>
+  	<div class="col-md-8">
+  		<h1>All users</h1>
+  			<%= will_paginate %>
+				<ul class="users">
+				  <% @users.each do |user| %>
+				    <li>
+				      <%= image_tag user.avatar.url, :class => "img-responsive img-thumbnail img-profile" %>
+				      <%= link_to user.name, user %>
+				      <% if current_user.admin? && !current_user?(user) %>
+						    | <%= link_to "delete", user, method: :delete,
+						                                  data: { confirm: "You sure?" } %>
+						  <% end %>
+				    </li>
+				  <% end %>
+				</ul>
+				<%= will_paginate %>
+  	</div>
+	</div>
+</div>
+
