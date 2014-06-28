@@ -7,4 +7,7 @@ class PagesController < ApplicationController
 
   def help
   end
+
+  def estadisticas
+  end
 end
