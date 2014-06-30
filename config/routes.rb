@@ -1,16 +1,20 @@
 GiCom::Application.routes.draw do
   # get "users/new"
-  resources :users
+  resources :users 
+  resources :events  
+  
   resources :sessions, only: [:new, :create, :destroy]
   
   get "pages/home"
   get "pages/help"
   get "pages/estadisticas"
+  #get "pages/servicio3E"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'pages#home'
+  match '/:user_id/servicio3E', to: 'pages#servicio3E', via: 'get'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'

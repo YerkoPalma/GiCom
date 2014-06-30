@@ -3,7 +3,7 @@
 		<div class="panel-body">
 			<ul class="nav nav-pills nav-stacked">	
 				<% if current_user.admin?%>					
-					<li><a href="#">Servicio 3E</a></li>
+					<li><%= link_to "Servicio 3E", {:controller => "pages", :action => "servicio3E", :user_id => current_user.id} %></li>
 					<li><a href="#">Publicidad</a></li>	
 			  	<li><%= link_to "Users", users_path %></li>
 			  <% end %>

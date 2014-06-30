@@ -8,11 +8,14 @@ class User
   field :password_digest, type: String
   field :remember_token, type: String
   field :producto, type: String
-  field :admin, type: Boolean
+  field :admin, type: Boolean, default: false
   field :_id, type: String, default: ->{ name } # Convierte el id del documento en su nombre, para mejor manejo de las URLs
   has_mongoid_attached_file :avatar
   validates_attachment_content_type :avatar, :content_type => ["image/jpg", "image/jpeg", "image/png"]
 
+  has_many :events
+  #embeds_many :events
+  
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 

@@ -1,0 +1,160 @@
+<script type="text/javascript">
+	$(function(){		
+		var chart1 = new Highcharts.Chart({
+			chart: {
+				renderTo: "stats_chart"
+			},
+			title: {
+				text: "Patrocinadores de eventos más populares (Ultimo mes)"
+			},
+			xAxis: {
+				title: {
+					text: "Cliente 3E"
+				},
+				categories: ["Movistar", "SAP", "Innovo", "USACH", "LAN", "MOP", "Alsacia"]
+			},
+			yAxis: {
+				title: {
+					text: "Asistentes promedio"
+				}
+			},
+			series: [{
+				name: "Asistentes promedio",
+				data: [101, 306, 250, 222, 99, 119]
+			}]
+		});		
+
+		$("input[type='radio']").change(function(){
+			var opt = $(this).attr('id');
+			if (opt == "option1"){
+				new Highcharts.Chart({
+					chart: {
+						renderTo: "stats_chart"
+					},
+					title: {
+						text: "Patrocinadores de eventos más populares (Ultimo mes)"
+					},
+					xAxis: {
+						title: {
+							text: "Cliente 3E"
+						},
+						categories: ["Movistar", "SAP", "Innovo", "USACH", "LAN", "MOP", "Alsacia"]
+					},
+					yAxis: {
+						title: {
+							text: "Asistentes promedio"
+						}
+					},
+					series: [{
+						name: "Asistentes promedio",
+						data: [101, 306, 250, 222, 99, 119]
+					}]
+				});
+				$("text[text-anchor='end']:not(text[opacity=1]):last-child").hide();
+			}else if(opt == "option2"){
+				new Highcharts.Chart({
+					chart: {
+						renderTo: "stats_chart",
+						type: "column"
+					},
+					title: {
+						text: "Archivos más reproducidos (GiCom LT)"
+					},
+					xAxis: {
+		        categories: [
+		          'Jan',
+		          'Feb',
+		          'Mar',
+		          'Apr',
+		          'May',
+		          'Jun',
+		          'Jul',
+		          'Aug',
+		          'Sep',
+		          'Oct',
+		          'Nov',
+		          'Dec'
+		        ]
+			    },
+					yAxis: {
+						title: {
+							text: "Reproducciones en GiCom LT"
+						}
+					},
+					tooltip: {
+		                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+		                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+		                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+		                footerFormat: '</table>',
+		                shared: true,
+		                useHTML: true
+		            },
+					series: [{
+		                name: '"Y las montañas hablaron" - Khaled Hosseini',
+		                data: [49, 71, 106, 129, 144, 176, 135, 148, 216, 194, 95, 54]
+		    
+		            }, {
+		                name: '"Inferno" - Dan Brown',
+		                data: [83, 78, 98, 93, 106, 84, 105, 104, 91, 83, 106, 92]
+		    
+		            }, {
+		                name: '"Cincuenta sombras de Grey" - E.L. James',
+		                data: [48, 38, 39, 41, 47, 48, 59, 59, 52, 65, 59, 51]
+		    
+		            }, {
+		                name: '"La vida de las mujeres" - Alice Munro',
+		                data: [42, 33, 34, 39, 52, 75, 57, 60, 47, 39, 46, 51]
+		    
+		            }]
+				});
+				$("text[text-anchor='end']:not(text[opacity=1]):last-child").hide();
+			}else if (opt == "option3"){
+				new Highcharts.Chart({
+					chart: {
+						renderTo: "stats_chart"
+					},
+					title: {
+						text: "Numero de usuarios por producto"
+					},
+					xAxis: {
+		        categories: [
+		          'Jan',
+		          'Feb',
+		          'Mar',
+		          'Apr',
+		          'May',
+		          'Jun',
+		          'Jul',
+		          'Aug',
+		          'Sep',
+		          'Oct',
+		          'Nov',
+		          'Dec'
+		        ]
+			    },
+					yAxis: {
+						title: {
+							text: "Numero de usuarios"
+						}
+					},
+					series: [{
+						name: "GiCom LT",
+						data: [159, 306, 450, 722, 899, 1009, 1108, 1212, 1428, 1609, 1722, 1840]
+					},
+					{
+						name: "GiCom E",
+						data: [159, 206, 401, 522, 799, 899, 808, 1012, 1228, 1209, 1222, 1325]
+					},
+					{
+						name: "GiCom 3E",
+						data: [1159, 13006, 21450, 27220, 32899, 30009, 41108, 51212, 49428, 61609, 69722, 71840]
+					}
+					]
+				});
+				$("text[text-anchor='end']:not(text[opacity=1]):last-child").hide();
+			}
+		})
+		$("text[text-anchor='end']:not(text[opacity=1]):last-child").hide();
+	});
+
+</script>
