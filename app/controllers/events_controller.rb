@@ -9,6 +9,10 @@ class EventsController < ApplicationController
 		end
 	end
 
+	def index
+    @events = Event.paginate(page: params[:page])
+  end
+
 	def show
 		@event = Event.find(params[:id])
 	end
@@ -16,7 +20,7 @@ class EventsController < ApplicationController
 	private
 
     def event_params
-      params.require(:event).permit(:expositor, :lugar, :fecha,
+      params.require(:event).permit(:nombre, :expositor, :lugar, :fecha,
                                    :categoria, :cliente)
     end
 end

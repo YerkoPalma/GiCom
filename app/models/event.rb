@@ -1,5 +1,6 @@
 class Event
   include Mongoid::Document
+  field :nombre, type: String
   field :expositor, type: String
   field :lugar, type: String
   field :fecha, type: Date

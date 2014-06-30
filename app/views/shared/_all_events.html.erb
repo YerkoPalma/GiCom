@@ -1,0 +1,24 @@
+<%= will_paginate @events%>
+				<table class="table table-bordered">
+		      <thead>
+		        <tr class="success">
+		        	<th>Nombre</th>
+		          <th>Expositor</th>
+		          <th>Fecha</th>
+		          <th>Lugar</th>
+		          <th>Categoria</th>
+		        </tr>
+		      </thead>
+		      <tbody>
+					  <% @events.each do |event| %>
+			        <tr class="active">
+			        	<td><%= event.nombre %></td>
+			          <td><%= event.expositor %></td>
+			          <td><%= event.fecha %></td>
+			          <td><%= event.lugar %></td>
+			          <td><%= event.categoria %></td>
+			        </tr>
+					  <% end %>
+			  	</tbody>
+				</table>
+				<%= will_paginate @events%>

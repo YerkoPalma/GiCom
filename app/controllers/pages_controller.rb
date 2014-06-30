@@ -7,6 +7,9 @@ class PagesController < ApplicationController
   	end
   end
 
+  def working
+  end
+  
   def help
   end
 
@@ -15,6 +18,7 @@ class PagesController < ApplicationController
 
   def servicio3E  	
     @user = User.find(params[:user_id])
+    @events = Event.paginate(page: params[:page])
   end
 
   private    
