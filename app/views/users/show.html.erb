@@ -11,7 +11,7 @@
   				<%= image_tag @user.avatar.url, :class => "img-responsive img-thumbnail" %>
   				<br> <br>
   				<% if current_user?(@user) %>
-  					<a class="btn btn-primary" style="width: 100%;">Editar Perfil</a>
+  					<%= link_to "Editar perfil", edit_user_path(current_user), {:class => "btn btn-primary", :style => "width: 100%;"} %>
   				<% else %>
   					<a class="btn btn-success" style="width: 100%;">Enviar mensaje</a>
   				<% end %>

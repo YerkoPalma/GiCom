@@ -1,1 +1,21 @@
-hola! <%= @event.expositor%>
+<%= render "shared/header"%>
+
+<div class="container" style="margin-top: 6%;">
+	<div class="row">
+		<div class="col-md-4">
+			<%= render "shared/user_sidemenu"%>
+		</div>
+  	<div class="col-md-8">
+  		<div class="row" style="margin-top: 15px;">
+  			
+  			<div class="jumbotron">
+				  <h1><%= @event.nombre %></h1>
+				  <p><strong>Expositor: </strong><%= @event.expositor %></p>
+				  <p><strong>Fecha: </strong><%= @event.fecha%></p>
+				  <p><strong>Lugar: </strong><%= @event.lugar%></p>
+				  <p><a class="btn btn-primary btn-lg" role="button">Editar</a></p>
+				</div>
+  		</div>
+  	</div>
+	</div>
+</div>

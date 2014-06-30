@@ -22,6 +22,11 @@
         </div>
 
         <div class="form-group">
+          <%= f.label :producto %>
+          <%= f.select(:producto, options_for_select([['GiCom E','GiComE'],['GiCom LT','GiComLT'],['GiCom 3E','GiCom3E']]), {:class => "form-control"}, {:class => "form-control"}) %>           
+        </div>
+        
+        <div class="form-group">
           <%= f.label :avatar %>
           <%= f.file_field :avatar%>					    
         </div>
