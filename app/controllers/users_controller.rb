@@ -25,6 +25,7 @@ class UsersController < ApplicationController
       flash[:success] = "Profile updated"
       redirect_to @user
     else
+      flash[:danger] = "No se pudo editar!"
       render 'edit'
     end
   end
@@ -49,7 +50,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :producto, :email, :password,
                                    :password_confirmation, :avatar)
     end
 
